@@ -1,0 +1,176 @@
+html, body {
+    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%; 
+    background-color: rgb(1, 1, 17);
+}
+.entete {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+.terreHeader {
+    width: 100%;
+    height: 400px; 
+}
+.terreHeader img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+.titre {
+    position: absolute; 
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 4rem;
+}
+.logoENI {
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    margin-bottom: 70%;
+}
+.logoENI img {
+    width: 100px;
+    height: auto;
+}
+.navigation {
+    
+    display: flex;
+    justify-content: space-around;
+}
+a {
+    background-color: rgb(1, 1, 17);
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 20px;   
+}
+hr {
+    background-color: rgb(252, 252, 252);
+    height: 10px;
+    border: none;
+     margin: 0;
+}
+h2{
+    color: azure;
+    text-align: center;
+    font-size: 4.5vw;
+    text-shadow: 0px 20px 20px rgba(0, 0, 0, 2);
+}
+a:hover {
+    transform: scale(1.35); 
+   text-shadow: 0px 20px 20px rgba(255, 255, 255, 2);
+}
+.presentation p,
+.presentation ul{
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    text-align: left ;
+    margin-left: 3rem ;
+    margin-right: 3rem;
+    padding-left: 0;    
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.presentation{   
+    display: flex;
+    margin-top: 3vw;
+    margin-top: 3vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background-color: rgb(41, 41, 41);
+    color: white; 
+    padding: 10px;
+    flex-direction: column;     
+    border-radius: 30px; 
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+.img {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 60vw; 
+    height: 40vw; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+.img img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+}
+.footer{
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    text-align: left ;
+    margin-left: 3rem ;
+    margin-right: 3rem;   
+    padding-left: 0;
+}
+
+
+
+@media (max-width: 1078px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center; 
+        padding: 10px; 
+    }
+    .navigation a {
+        font-size: 5vw; 
+        margin: 10px 0;
+    }
+    .titre {
+        font-size: 7vw; 
+        top: -10%;
+    }
+    .presentation {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding: 20px; 
+    }
+    h2 {
+        font-size: 6vw; 
+    }
+    p, ul {
+        font-size: 4vw; 
+    }
+    .img {
+        width: 80vw; 
+        height: auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    .titre {
+        font-size: 6vw;
+    }
+    .navigation a {
+        font-size: 6vw;
+    }
+    .presentation {
+        margin-left: 3vw;
+        margin-right: 3vw;
+        padding: 10px; 
+    }
+    p, ul {
+        font-size: 5vw;
+    }
+    .img {
+        width: 90vw;
+        height: auto; 
+    }
+}

@@ -1,0 +1,330 @@
+html, body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(1, 1, 17);
+}
+main {
+    border: none;
+    padding: 1rem;
+    background-color: rgb(41, 41, 41);
+    border-radius: 30px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 3vw;
+}
+.entete {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+.terreHeader {
+    width: 100%;
+    height: 400px;
+}
+.terreHeader img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.titre {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 4rem;
+}
+.logoENI {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    margin-bottom: 70%;
+}
+.logoENI img {
+    width: 100px;
+    height: auto;
+}
+.navigation {
+    display: flex;
+    justify-content: space-around;
+}
+a {
+    background-color: rgb(1, 1, 17);
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+hr {
+    background-color: rgb(252, 252, 252);
+    height: 10px;
+    border: none;
+    margin: 0;
+}
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 4.5vw;
+    text-shadow: 0px 20px 20px rgba(0, 0, 0, 2);
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+h3{
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+    text-shadow: 0px 20px 20px rgba(0, 0, 0, 2);
+    margin-top: 2vw;
+    margin-bottom: 2vw; 
+}
+a:hover {
+    transform: scale(1.35);
+    text-shadow: 0px 20px 20px rgba(255, 255, 255, 2);
+}
+label {
+    color: white;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.button {
+    width: 100%;
+    height: 3vw;
+}
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 0.5vw;
+    font-size: x-large;
+    color: rgb(177, 177, 177);
+}
+fieldset input {
+    background-color: rgb(41, 41, 41);
+    width: 40vw;
+    height: 2.5vw;
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    transition: opacity 0.3s;
+}
+.validation {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+.footer {
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    text-align: left;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-left: 0;
+}
+.input-container {
+    position: relative;
+    width: 40vw;
+}
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    visibility: hidden;
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+#image{
+    width: 100%;
+    height: 100%;
+}
+.lastScores{
+    width: 100%;
+}
+p{
+    text-align: center;
+    font-size: xx-large;
+}
+
+table{    
+    
+    margin: auto; 
+    border-collapse: collapse; 
+    border: 0.2vw solid #ccc; 
+}
+th, td {
+    border: 0.2vw solid #ffffff; 
+    padding: 20px;
+    text-align: left;
+tr{
+    height: 5vw;
+}
+th{
+    font-size: xx-large;
+    width: 15vw;
+}
+td{
+    height: 5vw;
+}
+}
+.container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+#gameBoard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+#plateau{
+    column-count: 7;
+    margin: 10px;
+}
+.cartes {
+    width: 9vw;
+    height: 11vw;
+    margin-bottom: 1vw;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cartes img {
+    object-fit: contain;  /* 'contain' si vous voulez éviter la coupe */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+.card.flipped {
+    background-color: #fff;
+    border-color: #00f;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-board {
+    display: grid;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+
+
+
+
+@media (max-width: 1078px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .navigation a {
+        font-size: 5vw;
+        margin: 10px 0;
+    }
+    .titre {
+        font-size: 7vw;
+        top: -10%;
+    }
+    .presentation {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding: 20px;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    p, ul {
+        font-size: 4vw;
+    }
+    .img {
+        width: 80vw;
+        height: auto;
+    }
+    .form1{
+        width: 50vw;
+        height: auto;
+    }
+}
+@media (max-width: 768px) {
+    .titre {
+        font-size: 6vw;
+    }
+    .navigation a {
+        font-size: 6vw;
+    }
+    .presentation {
+        margin-left: 3vw;
+        margin-right: 3vw;
+        padding: 10px;
+    }
+    p, ul {
+        font-size: 5vw;
+    }
+    .img {
+        width: 90vw;
+        height: auto;
+    }
+    .form1{
+        width: 50vw;
+        height: auto;
+    }
+}
+
