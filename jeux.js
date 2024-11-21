@@ -57,6 +57,9 @@ window.onload = function () {
     let faces = [...imgFacesCartes, ...imgFacesCartes]; 
     faces = shuffleArray(faces); 
 
+    let flippedCards = []; // Liste des cartes retournées
+    let canFlip = true; // Empêche le retournement pendant une comparaison
+
     for (let i = 0; i < 28; i++) { 
         let cartes = document.createElement('div');
         cartes.classList.add('cartes');
@@ -81,7 +84,6 @@ window.onload = function () {
             case "l1":  
                 imgDosCarte.src = "./images/dosdescartes/l1.png";
                 break;
-              
         }
         cartes.appendChild(imgDosCarte);
 
@@ -90,27 +92,67 @@ window.onload = function () {
         imgFaceCarte.style.display = "none"; 
 
         cartes.appendChild(imgFaceCarte);
-
         plateau.appendChild(cartes);
 
-     
         cartes.addEventListener('click', function () {
-            if (imgFaceCarte.style.display === "none") {
-                imgFaceCarte.style.display = "block";
-                imgDosCarte.style.display = "none";
-            } else {
-                imgFaceCarte.style.display = "none";
-                imgDosCarte.style.display = "block";
+            if (!canFlip || cartes.classList.contains('flipped')) return;
+
+            imgFaceCarte.style.display = "block";
+            imgDosCarte.style.display = "none";
+            cartes.classList.add('flipped');
+
+            flippedCards.push({ element: cartes, face: imgFaceCarte.src });
+
+            if (flippedCards.length === 2) {
+                canFlip = false; 
+                setTimeout(compare, 1000); 
             }
         });
     }
-};
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; 
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; 
+        }
+        return array;
     }
-    return array;
-}
 
+    function compare() {
+        const [card1, card2] = flippedCards;
+
+        if (card1.face === card2.face) {
+            // Correspondance trouvée
+            card1.element.style.pointerEvents = "none";
+            card2.element.style.pointerEvents = "none";
+        } else {
+            // Pas de correspondance
+            card1.element.querySelector('img:last-child').style.display = "none";
+            card1.element.querySelector('img:first-child').style.display = "block";
+            card1.element.classList.remove('flipped');
+
+            card2.element.querySelector('img:last-child').style.display = "none";
+            card2.element.querySelector('img:first-child').style.display = "block";
+            card2.element.classList.remove('flipped');
+        }
+
+        flippedCards = [];
+        canFlip = true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+};
